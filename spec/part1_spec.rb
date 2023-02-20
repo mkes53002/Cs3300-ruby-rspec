@@ -4,16 +4,22 @@ require_relative '../lib/ruby_intro'
 
 describe 'Ruby intro part 1' do
   describe '#sum' do
-
+    # Checks if the first requirement is functional and assigns points
     it 'returns correct sum [1 point]', points: 1 do
+      # Checks if the return value is an integer
       expect(sum([1, 2, 3, 4, 5])).to be_a_kind_of Integer
+      
+      # Checks if the return values for practice cases are correct value
       expect(sum([1, 2, 3, 4, 5])).to eq(15)
       expect(sum([1, 2, 3, 4, -5])).to eq(5)
       expect(sum([1, 2, 3, 4, -5, 5, -100])).to eq(-90)
     end
 
+    # Checks if the second requirement is functional and assigns points
     it 'works on the empty array [2 points]', points: 2 do
+      # Checks if the sum of an empty array raises an error
       expect { sum([]) }.not_to raise_error
+      # Checks that the sum is zero
       expect(sum([])).to be_zero
     end
   end
